@@ -343,13 +343,26 @@
       margin: 0 auto;
     }
 
-    .about__document {
+    .about__education {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 48rem;
+      margin: 0 auto var(--mb-4);
+      text-align: start;
+    }
+
+    .about__education li {
+      padding: 0.7rem 0.95rem 0.7rem 1rem;
+      border-left: 0.22rem solid var(--first-color);
+      color: var(--title-color);
+    }
+
+    .about__year {
       display: block;
-      width: min(100%, 40rem);
-      height: auto;
-      margin: 2rem auto 0;
-      border-radius: 0.5rem;
-      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+      margin-bottom: 0.15rem;
+      color: var(--first-color);
+      font-size: var(--small-font-size);
+      font-weight: var(--font-semi);
     }
 
     /* ===== PORTFOLIO / WORK CARDS =====*/
@@ -849,6 +862,21 @@
           <p class="about__text">Je suis étudiante en cybersécurité à ESGIS Bénin, actuellement en deuxième année. Je m’intéresse particulièrement aux nouvelles technologies, à l’intelligence artificielle, aux données et à la manière dont la cybersécurité peut contribuer à rendre les technologies de demain plus sûres.</p>
           <p class="about__text">Au-delà de mes études, je suis une personne curieuse, créative et passionnée par l’apprentissage. J’aime découvrir de nouvelles choses, expérimenter avec la technologie et transformer mes idées en projets.</p>
 
+          <h3 class="about__interests-title">Formation</h3>
+          <ul class="about__education">
+            <li><span class="about__year">2017</span> Certificat d’Études Primaires, Complexe scolaire « Les Bougillons »</li>
+            <li><span class="about__year">2021</span> BEPC, CEG Vêdoko</li>
+            <li><span class="about__year">2025</span> Baccalauréat série D, Complexe Scolaire Sainte Marie Stella</li>
+            <li><span class="about__year">Actuellement</span> Deuxième année en cybersécurité, ESGIS Bénin</li>
+          </ul>
+
+          <h3 class="about__interests-title">Langues</h3>
+          <ul class="about__interests">
+            <li>Français courant</li>
+            <li>Anglais intermédiaire</li>
+            <li>Fon langue maternelle</li>
+          </ul>
+
           <h3 class="about__interests-title">Centres d’intérêt</h3>
           <ul class="about__interests">
             <li>Cybersécurité</li>
@@ -861,7 +889,6 @@
           </ul>
 
           <p class="about__quote">« J’apprends, j’expérimente, je crée et j’avance chaque jour vers mes objectifs. »</p>
-          <img class="about__document" src="cv-akoha-divine.jpg" alt="CV d’AKOHA Divine Dorice Kafoui, étudiante en cybersécurité">
         </div>
       </div>
     </section>
@@ -900,20 +927,27 @@
 
       <div class="work__container bd-grid">
         <article class="work__card reveal">
-          <img class="work__photo work__photo--certificate" src="unesco-hackathon-2026-attestation.jpg" alt="Attestation de participation de Divine Dorice Kafoui AKOHA au UNESCO Youth Hackathon 2026, programme de mentorat, 2-3 juillet 2026">
+          <img class="work__photo work__photo--certificate" src="atelier-rfi-cotonou-2023.jpg" alt="Attestation de l’atelier d’art oratoire du Club RFI Cotonou, Divine AKOHA, 11, 13 et 14 avril 2023">
+          <h3 class="work__title">Atelier d’art oratoire — Initiation à la prise de parole en public</h3>
+          <p class="work__description">Club RFI Cotonou. Divine AKOHA, les 11, 13 et 14 avril 2023, au Collège d’Enseignement Général Sainte Rita à Cotonou. Thème : « Comment apprendre à parler en public avec aisance ? ». Formateur : Moudachirou Abdoul Fataou, président de la fédération.</p>
+        </article>
+
+        <article class="work__card reveal">
           <h3 class="work__title">UNESCO Youth Hackathon 2026</h3>
           <p class="work__description">Participante au programme de mentorat en juillet 2026, concept d’extension de navigateur pour vérifier les réponses de l’IA.</p>
           <a class="work__link" href="https://github.com/Souraka229/unesco" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
         </article>
 
         <article class="work__card reveal">
-          <img class="work__photo" src="first-global-panama-2025.jpg" alt="Divine AKOHA avec son certificat FIRST Global Challenge, Panama City 2025">
+          <div class="work__photos">
+            <img class="work__photo" src="first-global-panama-2025.jpg" alt="Divine AKOHA avec son certificat FIRST Global Challenge, Panama City 2025">
+            <img class="work__photo work__photo--certificate" src="first-global-certificat-2025.jpg" alt="Certificat d’excellence FIRST Global Challenge 2025, Panama City, Divine Dorice Kafoui AKOHA, Representing Team Benin">
+          </div>
           <h3 class="work__title">FIRST Global Challenge 2025</h3>
-          <p class="work__description">Équipe du Bénin, robotique, via Femcoders, Panama City 2025.</p>
+          <p class="work__description">Compétition internationale de robotique sur le thème de l’éco-équilibre, équipe du Bénin, via Femcoders, Panama City 2025. Contribution à la conception d’un robot capable d’effectuer des actions de précision et de s’adapter en temps réel aux défis liés à l’équilibre environnemental.</p>
         </article>
 
         <article class="work__card reveal">
-          <img class="work__photo work__photo--certificate" src="oim-baic-webinaire-avrr-2026-attestation.jpg" alt="Attestation de participation de Divine Dorice Kafoui AKOHA au webinaire OIM et BAIC sur l’intelligence artificielle au service du programme AVRR, 14 mai 2026">
           <h3 class="work__title">Webinaire OIM × BAIC — IA au service du programme AVRR</h3>
           <p class="work__description">14 mai 2026, attestation de participation.</p>
         </article>
