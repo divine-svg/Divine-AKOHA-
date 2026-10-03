@@ -427,6 +427,43 @@
       text-transform: uppercase;
     }
 
+    /* ===== SKILLS =====*/
+    .skills__list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      width: min(100%, 52rem);
+      margin: 0 auto;
+    }
+
+    .skills__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 3.4rem;
+      padding: 0.85rem 1rem 0.85rem 1.25rem;
+      border-radius: 0.5rem;
+      background: var(--container-color);
+      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+      color: var(--title-color);
+      font-weight: var(--font-semi);
+      text-align: center;
+    }
+
+    .skills__item::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 0.22rem;
+      background: var(--first-color);
+    }
+
+    @media screen and (min-width: 768px) {
+      .skills__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
     /* ===== FOOTER =====*/
     .footer {
       background-color: var(--second-color);
@@ -705,6 +742,7 @@
         <ul class="nav__list">
           <li class="nav__item"><a href="#home" class="nav__link active-link">Accueil</a></li>
           <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
           <li class="nav__item"><a href="#work" class="nav__link">Projets</a></li>
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
@@ -778,6 +816,25 @@
 
           <p class="about__quote">« J’apprends, j’expérimente, je crée et j’avance chaque jour vers mes objectifs. »</p>
         </div>
+      </div>
+    </section>
+
+    <!--===== SKILLS =====-->
+    <section class="skills section" id="skills">
+      <span class="section__subtitle">Savoir-faire</span>
+      <h2 class="section__title reveal">Compétences</h2>
+
+      <div class="skills__container bd-grid">
+        <ul class="skills__list">
+          <li class="skills__item">SQL</li>
+          <li class="skills__item">Python</li>
+          <li class="skills__item">HTML</li>
+          <li class="skills__item">JavaScript</li>
+          <li class="skills__item">React</li>
+          <li class="skills__item">Flutter</li>
+          <li class="skills__item">Langage C</li>
+          <li class="skills__item">CSS</li>
+        </ul>
       </div>
     </section>
 
