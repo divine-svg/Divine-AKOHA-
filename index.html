@@ -523,6 +523,15 @@
       .skills__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     }
 
+    .rfi__image {
+      display: block;
+      width: min(100%, 36rem);
+      height: auto;
+      margin: 0 auto;
+      border-radius: 0.5rem;
+      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+    }
+
     /* ===== FOOTER =====*/
     .footer {
       background-color: var(--second-color);
@@ -644,7 +653,7 @@
       }
 
       .nav__item {
-        margin-left: var(--mb-6);
+        margin-left: 1.15rem;
         margin-bottom: 0;
       }
 
@@ -802,6 +811,7 @@
           <li class="nav__item"><a href="#home" class="nav__link active-link">Accueil</a></li>
           <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
           <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
+          <li class="nav__item"><a href="#rfi" class="nav__link">Formation RFI</a></li>
           <li class="nav__item"><a href="#work" class="nav__link">Projets</a></li>
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
@@ -920,18 +930,23 @@
       </div>
     </section>
 
+    <!--===== FORMATION RFI =====-->
+    <section class="rfi section" id="rfi">
+      <span class="section__subtitle">Club RFI Cotonou</span>
+      <h2 class="section__title reveal">Formation RFI</h2>
+
+      <div class="rfi__container bd-grid">
+        <p class="about__text">Formation RFI pour l’art oratoire.</p>
+        <img class="rfi__image" src="atelier-rfi-cotonou-2023.jpg" alt="Attestation ATELIER D’ART ORATOIRE, Club RFI Cotonou, avril 2023, Divine AKOHA">
+      </div>
+    </section>
+
     <!--===== WORK / PROJETS =====-->
     <section class="work section" id="work">
       <span class="section__subtitle">Portfolio</span>
       <h2 class="section__title reveal">Projets</h2>
 
       <div class="work__container bd-grid">
-        <article class="work__card reveal">
-          <img class="work__photo work__photo--certificate" src="atelier-rfi-cotonou-2023.jpg" alt="Attestation de l’atelier d’art oratoire du Club RFI Cotonou, Divine AKOHA, 11, 13 et 14 avril 2023">
-          <h3 class="work__title">Atelier d’art oratoire — Initiation à la prise de parole en public</h3>
-          <p class="work__description">Club RFI Cotonou. Divine AKOHA, les 11, 13 et 14 avril 2023, au Collège d’Enseignement Général Sainte Rita à Cotonou. Thème : « Comment apprendre à parler en public avec aisance ? ». Formateur : Moudachirou Abdoul Fataou, président de la fédération.</p>
-        </article>
-
         <article class="work__card reveal">
           <h3 class="work__title">UNESCO Youth Hackathon 2026</h3>
           <p class="work__description">Participante au programme de mentorat en juillet 2026, concept d’extension de navigateur pour vérifier les réponses de l’IA.</p>
