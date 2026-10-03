@@ -380,6 +380,25 @@
       object-position: center 18%;
     }
 
+    .work__photos {
+      display: grid;
+      gap: 0.45rem;
+      width: calc(100% + 3rem);
+      margin: -1.5rem -1.5rem 1rem;
+    }
+
+    .work__photos .work__photo {
+      width: 100%;
+      margin: 0;
+    }
+
+    .work__photo--certificate {
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      background: #fff;
+    }
+
     .work__card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 32px rgba(14, 36, 49, 0.16);
@@ -876,7 +895,10 @@
         </article>
 
         <article class="work__card reveal">
-          <img class="work__photo work__photo--indabax" src="indabax-benin-2026.jpg" alt="Divine AKOHA, bénévole IndabaX Bénin, avec son badge">
+          <div class="work__photos">
+            <img class="work__photo work__photo--indabax" src="indabax-benin-2026.jpg" alt="Divine AKOHA, bénévole IndabaX Bénin, avec son badge">
+            <img class="work__photo work__photo--certificate" src="baic-certificat-indaba-2026.jpg" alt="Certificat décerné à Divine AKOHA pour sa participation au Deep Learning Indaba Benin 2026, en qualité de participante">
+          </div>
           <h3 class="work__title">Bénévole BAIC — Deep Learning IndabaX Bénin 2026</h3>
           <p class="work__description">Bénévole pour la Benin AI Community (BAIC), Deep Learning IndabaX Bénin 2026.</p>
         </article>
