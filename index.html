@@ -14,14 +14,14 @@
     :root {
       --header-height: 3rem;
       --font-semi: 600;
-      --hue-color: 199;
-      --first-color: hsl(199, 80%, 55%);
-      --first-color-alt: hsl(199, 78%, 42%);
+      --hue-color: 197;
+      --first-color: #87CEEB;
+      --first-color-alt: hsl(199, 70%, 48%);
       --second-color: hsl(201, 48%, 18%);
       --title-color: hsl(210, 18%, 14%);
       --text-color: hsl(210, 8%, 30%);
-      --body-color: #f4f1ea;
-      --container-color: #fbf9f4;
+      --body-color: #f3efe4;
+      --container-color: #faf7f1;
       --body-font: "Poppins", sans-serif;
       --big-font-size: 2rem;
       --h2-font-size: 1.25rem;
@@ -199,6 +199,7 @@
       position: relative;
       row-gap: 5rem;
       padding: 4rem 0 5rem;
+      background: linear-gradient(180deg, #d4eef8 0%, var(--body-color) 78%);
     }
 
     .home__data { align-self: center; }
@@ -269,7 +270,7 @@
     .button {
       display: inline-block;
       background-color: var(--first-color);
-      color: #fff;
+      color: var(--second-color);
       padding: 0.75rem 2.5rem;
       font-weight: var(--font-semi);
       border-radius: 0.5rem;
@@ -287,12 +288,12 @@
 
     .button--outline {
       background-color: transparent;
-      color: var(--first-color);
+      color: var(--second-color);
     }
 
     .button--outline:hover {
-      background-color: rgba(49, 174, 232, 0.14);
-      color: var(--first-color-alt);
+      background-color: rgba(135, 206, 235, 0.35);
+      color: var(--second-color);
       box-shadow: none;
     }
 
@@ -328,7 +329,7 @@
 
     .about__interests li {
       padding: 0.38rem 0.8rem;
-      border: 1px solid rgba(49, 174, 232, 0.45);
+      border: 1px solid rgba(135, 206, 235, 0.85);
       border-radius: 999px;
       background: var(--container-color);
       color: var(--title-color);
@@ -788,6 +789,7 @@
   </style>
 </head>
 <body>
+  <!-- palette bleu-ciel 2026-10-04b -->
   <!--===== HEADER =====-->
   <header class="l-header">
     <nav class="nav bd-grid">
