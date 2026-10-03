@@ -145,17 +145,6 @@
       padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) 0;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 34rem;
-      height: 34rem;
-      right: -10rem;
-      top: -14rem;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, .22), transparent 65%);
-    }
-
     .hero-text {
       position: relative;
       padding-bottom: clamp(2rem, 5vw, 4rem);
@@ -231,14 +220,14 @@
 
     .photo {
       position: relative;
+      z-index: 1;
       justify-self: center;
       width: min(100%, 360px);
       aspect-ratio: 3 / 4;
       border-radius: 999px 999px 0 0;
       overflow: hidden;
-      background: linear-gradient(180deg, #2F6BFF, #0B2A8F);
-      border: 6px solid rgba(255, 255, 255, .28);
-      border-bottom: 0;
+      background: none;
+      border: 0;
     }
 
     .photo img {
