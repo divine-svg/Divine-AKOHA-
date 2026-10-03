@@ -5,751 +5,573 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Divine AKOHA — Portfolio</title>
   <meta name="description" content="Portfolio de Divine AKOHA, étudiante en cybersécurité à ESGIS Bénin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
   <style>
-    /*===== GOOGLE FONTS =====*/
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-    /*===== VARIABLES CSS =====*/
     :root {
-      --header-height: 3rem;
-      --font-semi: 600;
-      --hue-color: 197;
-      --first-color: #87CEEB;
-      --first-color-alt: hsl(199, 70%, 48%);
-      --second-color: hsl(201, 48%, 18%);
-      --title-color: hsl(210, 18%, 14%);
-      --text-color: hsl(210, 8%, 30%);
-      --body-color: #f3efe4;
-      --container-color: #faf7f1;
-      --body-font: "Poppins", sans-serif;
-      --big-font-size: 2rem;
-      --h2-font-size: 1.25rem;
-      --normal-font-size: .938rem;
-      --small-font-size: .813rem;
-      --smaller-font-size: .75rem;
-      --mb-0-25: .25rem;
-      --mb-0-5: .5rem;
-      --mb-1: 1rem;
-      --mb-2: 1rem;
-      --mb-3: 1.5rem;
-      --mb-4: 2rem;
-      --mb-5: 2.5rem;
-      --mb-6: 3rem;
-      --z-back: -10;
-      --z-fixed: 100;
+      --navy: #0A1B45;
+      --blue: #1D4ED8;
+      --blue-deep: #1639A8;
+      --sky: #DBE7FF;
+      --ice: #F2F6FF;
+      --text: #33415F;
+      --display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+      --body: "DM Sans", "Segoe UI", sans-serif;
+      --wrap: 1100px;
     }
 
-    @media screen and (min-width: 968px) {
-      :root {
-        --big-font-size: 3.5rem;
-        --h2-font-size: 2rem;
-        --normal-font-size: 1rem;
-        --smaller-font-size: .875rem;
-        --small-font-size: .875rem;
-      }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
     }
-
-    /*===== BASE =====*/
-    *, ::before, ::after { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
 
     body {
-      margin: var(--header-height) 0 0 0;
-      font-family: var(--body-font);
-      font-size: var(--normal-font-size);
-      background-color: var(--body-color);
-      color: var(--text-color);
-    }
-
-    h1, h2, h3, p { margin: 0; }
-    h1, h2, h3 { color: var(--title-color); }
-
-    ul {
       margin: 0;
-      padding: 0;
-      list-style: none;
+      font-family: var(--body);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: #B4C0E0;
+      background-color: #02040C;
+      background-image:
+        radial-gradient(54rem 38rem at 90% -8%, rgba(37, 99, 235, .55), transparent 62%),
+        radial-gradient(46rem 40rem at -12% 42%, rgba(29, 78, 216, .40), transparent 62%),
+        radial-gradient(44rem 34rem at 105% 88%, rgba(59, 130, 246, .30), transparent 62%),
+        linear-gradient(180deg, #02040C 0%, #050B1F 55%, #02040C 100%);
+      background-attachment: fixed;
     }
 
-    a { text-decoration: none; }
+    h1, h2, h3, p, ul { margin: 0; padding: 0; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    h1, h2, h3 {
+      font-family: var(--display);
+      line-height: 1.1;
+      letter-spacing: -.02em;
     }
 
-    /*===== CLASS CSS =====*/
-    .section {
-      padding-top: 3rem;
-      padding-bottom: 2rem;
+    :focus-visible {
+      outline: 3px solid #9CC0FF;
+      outline-offset: 3px;
+      border-radius: 6px;
     }
 
-    .section__subtitle {
-      display: block;
-      font-size: var(--small-font-size);
-      margin-bottom: var(--mb-0-5);
-      text-align: center;
-      color: var(--text-color);
+    .wrap {
+      max-width: var(--wrap);
+      margin-inline: auto;
+      padding-inline: 1.25rem;
     }
 
-    .section__title {
-      position: relative;
-      font-size: var(--h2-font-size);
-      color: var(--first-color);
-      margin-top: var(--mb-0-25);
-      margin-bottom: var(--mb-4);
-      text-align: center;
-    }
-
-    .section__title::after {
-      position: absolute;
-      content: "";
-      width: 64px;
-      height: 0.18rem;
-      left: 0;
-      right: 0;
-      margin: auto;
-      top: 2rem;
-      background-color: var(--first-color);
-    }
-
-    /*===== LAYOUT =====*/
-    .bd-grid {
-      max-width: 1024px;
-      display: grid;
-      margin-left: var(--mb-2);
-      margin-right: var(--mb-2);
-    }
-
-    .l-header {
-      width: 100%;
-      position: fixed;
+    .top {
+      position: sticky;
       top: 0;
-      left: 0;
-      z-index: var(--z-fixed);
-      background-color: var(--container-color);
-      box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+      z-index: 10;
+      background: rgba(2, 4, 12, .65);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(80, 130, 255, .22);
     }
 
-    /*===== NAV =====*/
-    .nav {
-      height: var(--header-height);
+    .top .wrap {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-weight: var(--font-semi);
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 4rem;
     }
 
-    @media screen and (max-width: 767px) {
-      .nav__menu {
-        position: fixed;
-        top: var(--header-height);
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        padding: 2rem;
-        background-color: var(--second-color);
-        transition: .5s;
-      }
-    }
-
-    .nav__item { margin-bottom: var(--mb-4); }
-
-    .nav__link {
-      position: relative;
+    .logo {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.25rem;
       color: #fff;
     }
 
-    .nav__link:hover { position: relative; }
-
-    .nav__link:hover::after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 0.18rem;
-      left: 0;
-      top: 2rem;
-      background-color: var(--first-color);
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: .25rem;
     }
 
-    .nav__logo { color: var(--second-color); }
+    .menu a {
+      padding: .4rem .75rem;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: .92rem;
+      color: #fff;
+      transition: background .2s, color .2s;
+    }
 
-    .nav__toggle {
-      color: var(--second-color);
-      font-size: 1.5rem;
+    .menu a:hover,
+    .menu a.active-link { background: rgba(255, 255, 255, .16); }
+
+    .menu a.cta {
+      background: #fff;
+      color: var(--blue-deep);
+    }
+
+    .menu a.cta:hover,
+    .menu a.cta.active-link { background: var(--sky); }
+
+    .nav-toggle {
+      display: none;
+      color: #fff;
+      font-size: 1.7rem;
+      background: none;
+      border: 0;
       cursor: pointer;
     }
 
-    .active-link::after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 0.18rem;
-      left: 0;
-      top: 2rem;
-      background-color: var(--first-color);
-    }
+    .hero { padding: 1.25rem 0 0; }
 
-    .show { right: 0; }
-
-    /*===== HOME =====*/
-    .home {
+    .hero-card {
       position: relative;
-      row-gap: 5rem;
-      padding: 4rem 0 5rem;
-      background: linear-gradient(180deg, #d4eef8 0%, var(--body-color) 78%);
-    }
-
-    .home__data { align-self: center; }
-
-    .home__greeting {
-      display: block;
-      font-size: var(--small-font-size);
-      font-weight: var(--font-semi);
-      color: var(--first-color);
-      margin-bottom: var(--mb-0-5);
-    }
-
-    .home__title {
-      font-size: var(--big-font-size);
-      margin-bottom: var(--mb-1);
-      color: var(--title-color);
-      line-height: 1.2;
-    }
-
-    .home__title-color { color: var(--first-color); }
-
-    .home__subtitle {
-      font-size: var(--h2-font-size);
-      color: var(--text-color);
-      font-weight: 400;
-      margin-bottom: var(--mb-4);
-      max-width: 28rem;
-    }
-
-    .home__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .home__social {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .home__social-icon {
-      width: max-content;
-      margin-bottom: var(--mb-2);
-      font-size: 1.5rem;
-      color: var(--second-color);
-    }
-
-    .home__social-icon:hover { color: var(--first-color); }
-
-    .home__img {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 260px;
-    }
-
-    .home__blob { fill: var(--first-color); }
-
-    .home__blob-text {
-      fill: #fff;
-      font-family: var(--body-font);
-      font-size: 120px;
-      font-weight: 700;
-      letter-spacing: -4px;
-    }
-
-    /*BUTTONS*/
-    .button {
-      display: inline-block;
-      background-color: var(--first-color);
-      color: var(--second-color);
-      padding: 0.75rem 2.5rem;
-      font-weight: var(--font-semi);
-      border-radius: 0.5rem;
-      border: 2px solid var(--first-color);
-      transition: .3s;
-    }
-
-    .button:hover {
-      box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
-      background-color: var(--first-color-alt);
-      border-color: var(--first-color-alt);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(37, 99, 235, .35), rgba(10, 20, 60, .35));
+      border: 1px solid rgba(100, 150, 255, .35);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+      backdrop-filter: blur(6px);
       color: #fff;
-      transform: translateY(-6px);
+      border-radius: 2rem;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: end;
+      gap: 1rem;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) 0;
     }
 
-    .button--outline {
-      background-color: transparent;
-      color: var(--second-color);
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 34rem;
+      height: 34rem;
+      right: -10rem;
+      top: -14rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, .22), transparent 65%);
     }
 
-    .button--outline:hover {
-      background-color: rgba(135, 206, 235, 0.35);
-      color: var(--second-color);
-      box-shadow: none;
+    .hero-text {
+      position: relative;
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+      align-self: center;
     }
 
-    /* ===== ABOUT =====*/
-    .about__container {
-      row-gap: 2rem;
-      text-align: center;
+    .hello {
+      display: inline-block;
+      background: rgba(255, 255, 255, .16);
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
     }
 
-    .about__subtitle { margin-bottom: var(--mb-2); }
-
-    .about__text {
-      margin-bottom: var(--mb-2);
-      max-width: 48rem;
-      margin-left: auto;
-      margin-right: auto;
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.1rem;
     }
 
-    .about__interests-title {
-      margin: var(--mb-4) 0 var(--mb-2);
-      font-size: 1rem;
-      color: var(--title-color);
+    .lead {
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      max-width: 28rem;
+      color: #E4ECFF;
+      margin-bottom: 1.75rem;
     }
 
-    .about__interests {
+    .btns, .hero-social {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.65rem;
-      max-width: 48rem;
-      margin: 0 auto var(--mb-3);
+      gap: .75rem;
     }
 
-    .about__interests li {
-      padding: 0.38rem 0.8rem;
-      border: 1px solid rgba(135, 206, 235, 0.85);
+    .hero-social { margin-top: 1.25rem; }
+
+    .hero-social a {
+      width: 2.6rem;
+      height: 2.6rem;
+      display: grid;
+      place-items: center;
       border-radius: 999px;
-      background: var(--container-color);
-      color: var(--title-color);
-      font-size: var(--small-font-size);
-      box-shadow: 0 2px 8px rgba(14, 36, 49, 0.04);
+      border: 1px solid rgba(255, 255, 255, .28);
+      color: #fff;
+      font-size: 1.25rem;
+      transition: background .2s, transform .2s;
     }
 
-    .about__quote {
-      color: var(--first-color-alt);
-      font-style: italic;
-      max-width: 48rem;
-      margin: 0 auto;
-    }
-
-    .about__education {
-      display: grid;
-      gap: 0.75rem;
-      max-width: 48rem;
-      margin: 0 auto var(--mb-4);
-      text-align: start;
-    }
-
-    .about__education li {
-      padding: 0.7rem 0.95rem 0.7rem 1rem;
-      border-left: 0.22rem solid var(--first-color);
-      color: var(--title-color);
-    }
-
-    .about__year {
-      display: block;
-      margin-bottom: 0.15rem;
-      color: var(--first-color);
-      font-size: var(--small-font-size);
-      font-weight: var(--font-semi);
-    }
-
-    /* ===== PORTFOLIO / WORK CARDS =====*/
-    .work__container {
-      row-gap: 2rem;
-    }
-
-    .work__card {
-      background: var(--container-color);
-      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      overflow: hidden;
-      position: relative;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .work__card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 0.22rem;
-      background: var(--first-color);
-      z-index: 1;
-    }
-
-    .work__photo {
-      display: block;
-      width: calc(100% + 3rem);
-      height: auto;
-      aspect-ratio: 620 / 740;
-      margin: -1.5rem -1.5rem 1rem;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .work__card:has(.work__doc) {
-      align-self: start;
-    }
-
-    .work__doc {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 0 1rem;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .work__card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 32px rgba(14, 36, 49, 0.16);
-    }
-
-    .work__title {
-      font-size: 1.1rem;
-      margin-bottom: var(--mb-1);
-      color: var(--title-color);
-    }
-
-    .work__description {
-      margin-bottom: 0;
-      color: var(--text-color);
-    }
-
-    .work__link {
-      display: inline-block;
-      margin-top: var(--mb-2);
-      font-size: var(--small-font-size);
-      font-weight: var(--font-semi);
-      color: var(--first-color);
-    }
-
-    .work__link:hover { color: var(--first-color-alt); }
-
-    /* ===== CONTACT =====*/
-    .contact__container {
-      row-gap: 1.5rem;
-    }
-
-    .contact__list {
-      display: grid;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .contact__card {
-      display: block;
-      padding: 1.1rem 1.2rem;
-      border-radius: 0.5rem;
-      background: var(--container-color);
-      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-      color: var(--title-color);
-      font-weight: var(--font-semi);
-      transition: .25s ease;
-    }
-
-    .contact__card:hover {
-      color: var(--first-color);
+    .hero-social a:hover {
+      background: rgba(255, 255, 255, .16);
       transform: translateY(-6px);
     }
 
-    .contact__card-label {
-      display: block;
-      margin-bottom: 0.25rem;
-      color: var(--first-color);
-      font-size: var(--small-font-size);
-      text-transform: uppercase;
+    .btn {
+      display: inline-block;
+      padding: .8rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .98rem;
+      border: 2px solid transparent;
+      transition: transform .2s, background .2s, color .2s;
     }
 
-    /* ===== SKILLS =====*/
-    .skills__list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      width: min(100%, 52rem);
-      margin: 0 auto;
-    }
+    .btn:hover { transform: translateY(-6px); }
 
-    .skills__item {
+    .btn-white { background: #fff; color: var(--blue-deep); }
+    .btn-white:hover { background: var(--sky); }
+
+    .btn-line { border-color: rgba(255, 255, 255, .65); color: #fff; }
+    .btn-line:hover { background: rgba(255, 255, 255, .14); }
+
+    .photo {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      justify-self: center;
+      width: min(100%, 360px);
+      aspect-ratio: 3 / 4;
+      border-radius: 999px 999px 0 0;
       overflow: hidden;
-      min-height: 3.4rem;
-      padding: 0.85rem 1rem 0.85rem 1.25rem;
-      border-radius: 0.5rem;
-      background: var(--container-color);
-      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-      color: var(--title-color);
-      font-weight: var(--font-semi);
-      text-align: center;
-      line-height: 1.3;
+      background: linear-gradient(180deg, #2F6BFF, #0B2A8F);
+      border: 6px solid rgba(255, 255, 255, .28);
+      border-bottom: 0;
     }
 
-    .skills__item::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 0.22rem;
-      background: var(--first-color);
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
 
-    @media screen and (min-width: 768px) {
-      .skills__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+
+    .title {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: .4rem;
+      color: #fff;
     }
 
-    .rfi__image {
+    .subtitle {
       display: block;
+      margin-bottom: 2rem;
+      color: #8FB0FF;
+      font-weight: 500;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(1.5rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .about-grid .title { margin-bottom: 0; }
+
+    .prose p, p.intro { max-width: 42rem; margin-bottom: 1.1rem; }
+
+    p.intro { margin-bottom: 1.5rem; }
+
+    .prose p:first-child { font-size: 1.2rem; color: #fff; }
+
+    .block-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 1.4rem 0 .7rem;
+    }
+
+    .edu li {
+      margin-bottom: .55rem;
+      padding-left: .9rem;
+      border-left: 3px solid #6C9BFF;
+    }
+
+    .edu .year {
+      display: block;
+      color: #8FB0FF;
+      font-weight: 700;
+      font-size: .88rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: .4rem 0 1.2rem;
+    }
+
+    .chips li {
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .3);
+      color: #fff;
+      font-weight: 500;
+      font-size: .92rem;
+      padding: .4rem .95rem;
+      border-radius: 999px;
+    }
+
+    .quote {
+      border-left: 4px solid #9CC0FF;
+      padding: .25rem 0 .25rem 1.1rem;
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #fff;
+      max-width: 34rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .8rem;
+    }
+
+    .skill {
+      background: #0A1126;
+      color: #fff;
+      border: 1px solid rgba(80, 130, 255, .28);
+      border-radius: 1rem;
+      padding: .9rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .35);
+    }
+
+    .panel {
+      background: rgba(5, 16, 64, .35);
+      border: 1px solid rgba(80, 130, 255, .15);
+      border-radius: 2rem;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .rfi-image {
       width: min(100%, 36rem);
       height: auto;
-      margin: 0 auto;
-      border-radius: 0.5rem;
-      box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+      margin: 1.5rem auto 0;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, .2);
     }
 
-    /* ===== FOOTER =====*/
-    .footer {
-      background-color: var(--second-color);
+    .projects {
+      background: rgba(0, 0, 0, .45);
+      border-block: 1px solid rgba(80, 130, 255, .15);
+    }
+
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.1rem;
+    }
+
+    .card {
+      background: #0A1126;
+      color: #AEBBDD;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .5);
+      border: 1px solid rgba(80, 130, 255, .28);
+      border-radius: 1.5rem;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
       color: #fff;
-      font-weight: var(--font-semi);
+    }
+
+    .card-main {
+      grid-column: span 6;
+      background: linear-gradient(135deg, #1D4ED8, #0B2A8F);
+      border-color: rgba(140, 180, 255, .4);
+      color: #E4ECFF;
+      padding: clamp(1.6rem, 4vw, 2.6rem);
+      gap: .8rem;
+    }
+
+    .card-main h3 {
+      font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+      max-width: 36rem;
+    }
+
+    .card-main p { max-width: 40rem; }
+
+    .card-main .btn { align-self: flex-start; margin-top: .6rem; }
+
+    .card-a, .card-b, .card-c { grid-column: span 2; }
+
+    .card-photo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #1D4ED8, #0B2A8F);
+      border: 1px solid rgba(140, 180, 255, .35);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+      color: #E4ECFF;
+      border-radius: 2rem;
+      padding: clamp(2rem, 6vw, 4rem);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .8rem;
+    }
+
+    .contact-box p { max-width: 32rem; }
+
+    .mail {
+      display: block;
+      word-break: break-all;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      color: #fff;
+      margin-top: 1rem;
+    }
+
+    .mail:hover { text-decoration: underline; }
+
+    .links { display: grid; gap: .7rem; }
+
+    .links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(2, 4, 12, .45);
+      border-radius: 1rem;
+      padding: .95rem 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .18);
+      transition: transform .2s, background .2s, color .2s;
+    }
+
+    .links a:hover {
+      transform: translateX(4px);
+      background: #fff;
+      color: var(--blue-deep);
+    }
+
+    .links span {
+      font-weight: 400;
+      font-size: .9rem;
+      opacity: .75;
+      text-align: right;
+    }
+
+    footer {
+      background: #000;
+      color: #B8C7EE;
+      border-top: 1px solid rgba(80, 130, 255, .22);
+      padding: 1.15rem 0;
+      font-size: .92rem;
+    }
+
+    footer .wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 0.75rem 1.5rem;
-      padding: 1.15rem max(1.25rem, calc((100% - 1024px) / 2));
-      text-align: start;
+      gap: .75rem 1.5rem;
     }
 
-    .footer__title {
-      font-size: 2rem;
-      margin: 0;
+    .footer-name {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.35rem;
       color: #fff;
     }
 
-    .footer__social {
+    .footer-social {
       display: flex;
       align-items: center;
       justify-content: center;
       flex: 1 1 auto;
-      margin: 0;
+      gap: 1rem;
+      font-size: 1.4rem;
     }
 
-    .footer__icon {
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 0 0.55rem;
+    .footer-social a:hover { color: #fff; }
+
+    .reveal { opacity: 1; translate: 0 0; }
+
+    @media (max-width: 860px) {
+      .nav-toggle { display: inline-flex; }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 4.15rem;
+        right: 1.25rem;
+        left: 1.25rem;
+        flex-direction: column;
+        padding: .75rem;
+        border-radius: 1.25rem;
+        background: rgba(2, 4, 12, .92);
+        border: 1px solid rgba(80, 130, 255, .28);
+        backdrop-filter: blur(16px);
+      }
+
+      .menu.show { display: flex; }
     }
 
-    .footer__copy {
-      font-size: var(--smaller-font-size);
-      color: #fff;
-      margin: 0;
+    @media (max-width: 820px) {
+      .hero-card { grid-template-columns: 1fr; border-radius: 1.5rem; }
+      .photo { width: min(78%, 300px); }
+      .about-grid, .contact-box { grid-template-columns: 1fr; }
+      .about-grid .title { margin-bottom: 1rem; }
+      .contact-box { border-radius: 1.5rem; }
+      .card-a, .card-b, .card-c { grid-column: span 6; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media screen and (max-width: 560px) {
-      .footer { justify-content: flex-start; }
-
-      .footer__social {
-        flex: 0 1 auto;
-        justify-content: flex-start;
-      }
-
-      .footer__copy { margin-left: auto; }
+    @media (max-width: 560px) {
+      footer .wrap { justify-content: flex-start; }
+      .footer-social { flex: 0 1 auto; justify-content: flex-start; }
+      .footer-copy { margin-left: auto; }
     }
 
-    /* ===== MEDIA QUERIES =====*/
-    @media screen and (max-width: 320px) {
-      .home { row-gap: 2rem; }
-      .home__img { width: 200px; }
-    }
-
-    @media screen and (min-width: 576px) {
-      .home { padding: 4rem 0 2rem; }
-
-      .home__social {
-        padding-top: 0;
-        padding-bottom: 2.5rem;
-        flex-direction: row;
-        align-self: flex-end;
-      }
-
-      .home__social-icon {
-        margin-bottom: 0;
-        margin-right: var(--mb-4);
-      }
-
-      .home__img {
-        width: 300px;
-        bottom: 25%;
-      }
-
-      .about__container {
-        text-align: initial;
-      }
-
-      .about__interests { justify-content: flex-start; }
-
-      .work__container {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-        padding-top: 2rem;
-      }
-
-      .contact__list {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .contact__container { justify-items: stretch; }
-    }
-
-    @media screen and (min-width: 768px) {
-      body { margin: 0; }
-
-      .section {
-        padding-top: 4rem;
-        padding-bottom: 3rem;
-      }
-
-      .section__title { margin-bottom: var(--mb-6); }
-
-      .section__title::after {
-        width: 80px;
-        top: 3rem;
-      }
-
-      .nav {
-        height: calc(var(--header-height) + 1.5rem);
-      }
-
-      .nav__list {
-        display: flex;
-        padding-top: 0;
-      }
-
-      .nav__item {
-        margin-left: 1.15rem;
-        margin-bottom: 0;
-      }
-
-      .nav__toggle { display: none; }
-
-      .nav__link { color: var(--second-color); }
-
-      .home { padding: 8rem 0 2rem; }
-
-      .home__img {
-        width: 400px;
-        bottom: 10%;
-      }
-
-      .about__container { padding-top: 2rem; }
-
-      .work__container {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-      }
-    }
-
-    @media screen and (min-width: 992px) {
-      .bd-grid {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .home { padding: 10rem 0 2rem; }
-
-      .home__img { width: 450px; }
-    }
-
-    /*===== MOTION =====*/
-    .reveal {
-      opacity: 1;
-      translate: 0 0;
-    }
-
-    @keyframes hero-fade-up {
-      from { opacity: 0; translate: 0 2.6rem; }
-      to { opacity: 1; translate: 0 0; }
-    }
-
-    @keyframes gentle-float {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -22px; }
+    @keyframes up {
+      from { opacity: 0; transform: translateY(1.2rem); }
+      to { opacity: 1; transform: none; }
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      .home__greeting,
-      .home__title,
-      .home__subtitle,
-      .home__buttons,
-      .home__social {
-        animation: hero-fade-up 0.95s cubic-bezier(.2, .7, .2, 1) both;
+      .hero-text > * { animation: up .7s ease both; }
+      .hero-text > *:nth-child(2) { animation-delay: .1s; }
+      .hero-text > *:nth-child(3) { animation-delay: .2s; }
+      .hero-text > *:nth-child(4) { animation-delay: .3s; }
+      .hero-text > *:nth-child(5) { animation-delay: .4s; }
+      .photo { animation: up .9s .15s ease both; }
+
+      .section .title.reveal,
+      .card.reveal,
+      .links a.reveal,
+      .skill.reveal {
+        transition: opacity .95s ease, translate .95s ease, transform .25s ease, background .2s, color .2s;
       }
 
-      .home__greeting { animation-delay: 0.04s; }
-      .home__title { animation-delay: 0.22s; }
-      .home__subtitle { animation-delay: 0.42s; }
-      .home__buttons { animation-delay: 0.62s; }
-      .home__social { animation-delay: 0.82s; }
-
-      .home__img {
-        animation: gentle-float 4.6s ease-in-out infinite;
-      }
-
-      .nav__link::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 0.2rem;
-        left: 0;
-        top: 2rem;
-        border-radius: 1rem;
-        background-color: var(--first-color);
-        transform: scaleX(0);
-        transform-origin: left center;
-        transition: transform 0.45s ease;
-      }
-
-      .nav__link:hover::after,
-      .active-link::after {
-        transform: scaleX(1);
-      }
-
-      .section__title.reveal,
-      .work__card.reveal,
-      .contact__card.reveal {
-        transition: opacity 0.95s ease, translate 0.95s ease;
-      }
-
-      .work__card.reveal {
-        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.95s ease, translate 0.95s ease;
-      }
-
-      .work__container .work__card:nth-child(2) { transition-delay: 0s, 0s, 0.1s, 0.1s; }
-      .work__container .work__card:nth-child(3) { transition-delay: 0s, 0s, 0.18s, 0.18s; }
-      .work__container .work__card:nth-child(4) { transition-delay: 0s, 0s, 0.26s, 0.26s; }
-
-      .contact__card.reveal {
-        transition: color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, opacity 0.95s ease, translate 0.95s ease;
-      }
-
-      .contact__list li:nth-child(2) .contact__card { transition-delay: 0s, 0s, 0s, 0.1s, 0.1s; }
-      .contact__list li:nth-child(3) .contact__card { transition-delay: 0s, 0s, 0s, 0.18s, 0.18s; }
+      .card.reveal:hover { transform: translateY(-8px); }
 
       @media (scripting: enabled) {
         .reveal:not(.is-inview) {
@@ -762,12 +584,8 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
 
-      .home__greeting,
-      .home__title,
-      .home__subtitle,
-      .home__buttons,
-      .home__social,
-      .home__img,
+      .hero-text > *,
+      .photo,
       .reveal {
         animation: none;
         opacity: 1;
@@ -775,112 +593,79 @@
         transform: none;
       }
 
-      .button:hover,
-      .work__card:hover,
-      .contact__card:hover {
-        transform: none;
-      }
-
-      .nav__link::after,
-      .nav__menu {
-        transition: none;
-      }
+      .btn:hover,
+      .hero-social a:hover,
+      .links a:hover,
+      .card.reveal:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-  <!-- palette bleu-ciel 2026-10-04b -->
-  <!--===== HEADER =====-->
-  <header class="l-header">
-    <nav class="nav bd-grid">
-      <div>
-        <a href="#home" class="nav__logo">Divine</a>
-      </div>
-
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active-link">Accueil</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
-          <li class="nav__item"><a href="#rfi" class="nav__link">Formation RFI</a></li>
-          <li class="nav__item"><a href="#work" class="nav__link">Projets</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="nav__toggle" id="nav-toggle" aria-label="Menu">
-        <i class="bx bx-menu"></i>
-      </div>
-    </nav>
+  <header class="top">
+    <div class="wrap">
+      <a href="#home" class="logo">Divine</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" type="button"><i class="bx bx-menu"></i></button>
+      <nav class="menu" id="nav-menu" aria-label="Navigation principale">
+        <a href="#home" class="nav__link active-link">Accueil</a>
+        <a href="#about" class="nav__link">À propos</a>
+        <a href="#skills" class="nav__link">Compétences</a>
+        <a href="#rfi" class="nav__link">Formation RFI</a>
+        <a href="#work" class="nav__link">Projets</a>
+        <a href="#contact" class="nav__link cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="l-main">
-    <!--===== HOME =====-->
-    <section class="home bd-grid" id="home">
-      <div class="home__data">
-        <span class="home__greeting">Bonjour, je suis</span>
-        <h1 class="home__title"><span class="home__title-color">Divine AKOHA</span></h1>
-        <p class="home__subtitle">Étudiante en cybersécurité à ESGIS Bénin, en deuxième année.</p>
-        <div class="home__buttons">
-          <a href="#contact" class="button">Me contacter</a>
-          <a href="#work" class="button button--outline">Voir les projets</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="hero-text">
+            <span class="hello">Bonjour, je suis</span>
+            <h1>Divine AKOHA</h1>
+            <p class="lead">Étudiante en cybersécurité à ESGIS Bénin, en deuxième année.</p>
+            <div class="btns">
+              <a href="#contact" class="btn btn-white">Me contacter</a>
+              <a href="#work" class="btn btn-line">Voir les projets</a>
+            </div>
+            <div class="hero-social">
+              <a href="https://github.com/divine-svg" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i></a>
+              <a href="https://www.linkedin.com/in/divine-akoha-6a22a6382" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a>
+              <a href="mailto:divineakoha27@gmail.com" aria-label="E-mail"><i class="bx bx-envelope"></i></a>
+            </div>
+          </div>
+          <div class="photo">
+            <img src="photo.png" alt="Photo de Divine AKOHA">
+          </div>
         </div>
-      </div>
-
-      <div class="home__social">
-        <a href="https://github.com/divine-svg" class="home__social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-          <i class="bx bxl-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/divine-akoha-6a22a6382" class="home__social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <i class="bx bxl-linkedin"></i>
-        </a>
-        <a href="mailto:divineakoha27@gmail.com" class="home__social-icon" aria-label="E-mail">
-          <i class="bx bx-envelope"></i>
-        </a>
-      </div>
-
-      <div class="home__img">
-        <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Photo de Divine AKOHA">
-          <mask id="mask0" mask-type="alpha">
-            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-          </mask>
-          <g mask="url(#mask0)">
-            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-            <image href="photo.png" x="55" y="8" width="370" height="476" preserveAspectRatio="xMidYMid slice"/>
-          </g>
-        </svg>
       </div>
     </section>
 
-    <!--===== ABOUT =====-->
-    <section class="about section" id="about">
-      <span class="section__subtitle">Introduction</span>
-      <h2 class="section__title reveal">À propos</h2>
+    <section id="about">
+      <div class="wrap about-grid">
+        <h2 class="title reveal">À propos</h2>
+        <div class="prose">
+          <p>Je suis étudiante en cybersécurité à ESGIS Bénin, actuellement en deuxième année. Je m’intéresse particulièrement aux nouvelles technologies, à l’intelligence artificielle, aux données et à la manière dont la cybersécurité peut contribuer à rendre les technologies de demain plus sûres.</p>
+          <p>Au-delà de mes études, je suis une personne curieuse, créative et passionnée par l’apprentissage. J’aime découvrir de nouvelles choses, expérimenter avec la technologie et transformer mes idées en projets.</p>
+          <p>J’ai obtenu le Certificat d’Études Primaires au complexe scolaire « Les Bougillons » en 2017, le BEPC au CEG Vêdoko en 2021, puis le baccalauréat série D au Complexe Scolaire Sainte Marie Stella en 2025. Je poursuis ma deuxième année en cybersécurité à ESGIS Bénin. Je parle le français couramment, l’anglais à un niveau intermédiaire, et le fon est ma langue maternelle.</p>
 
-      <div class="about__container bd-grid">
-        <div>
-          <h3 class="about__subtitle">Divine AKOHA</h3>
-          <p class="about__text">Je suis étudiante en cybersécurité à ESGIS Bénin, actuellement en deuxième année. Je m’intéresse particulièrement aux nouvelles technologies, à l’intelligence artificielle, aux données et à la manière dont la cybersécurité peut contribuer à rendre les technologies de demain plus sûres.</p>
-          <p class="about__text">Au-delà de mes études, je suis une personne curieuse, créative et passionnée par l’apprentissage. J’aime découvrir de nouvelles choses, expérimenter avec la technologie et transformer mes idées en projets.</p>
-          <p class="about__text">J’ai obtenu le Certificat d’Études Primaires au complexe scolaire « Les Bougillons » en 2017, le BEPC au CEG Vêdoko en 2021, puis le baccalauréat série D au Complexe Scolaire Sainte Marie Stella en 2025. Je poursuis ma deuxième année en cybersécurité à ESGIS Bénin. Je parle le français couramment, l’anglais à un niveau intermédiaire, et le fon est ma langue maternelle.</p>
-
-          <h3 class="about__interests-title">Formation</h3>
-          <ul class="about__education">
-            <li><span class="about__year">2017</span> Certificat d’Études Primaires, Complexe scolaire « Les Bougillons »</li>
-            <li><span class="about__year">2021</span> BEPC, CEG Vêdoko</li>
-            <li><span class="about__year">2025</span> Baccalauréat série D, Complexe Scolaire Sainte Marie Stella</li>
-            <li><span class="about__year">Actuellement</span> Deuxième année en cybersécurité, ESGIS Bénin</li>
+          <h3 class="block-title">Formation</h3>
+          <ul class="edu">
+            <li><span class="year">2017</span> Certificat d’Études Primaires, Complexe scolaire « Les Bougillons »</li>
+            <li><span class="year">2021</span> BEPC, CEG Vêdoko</li>
+            <li><span class="year">2025</span> Baccalauréat série D, Complexe Scolaire Sainte Marie Stella</li>
+            <li><span class="year">Actuellement</span> Deuxième année en cybersécurité, ESGIS Bénin</li>
           </ul>
 
-          <h3 class="about__interests-title">Langues</h3>
-          <ul class="about__interests">
+          <h3 class="block-title">Langues</h3>
+          <ul class="chips" aria-label="Langues">
             <li>Français courant</li>
             <li>Anglais intermédiaire</li>
             <li>Fon langue maternelle</li>
           </ul>
 
-          <h3 class="about__interests-title">Centres d’intérêt</h3>
-          <ul class="about__interests">
+          <h3 class="block-title">Centres d’intérêt</h3>
+          <ul class="chips" aria-label="Centres d’intérêt">
             <li>Cybersécurité</li>
             <li>Intelligence artificielle et robotique</li>
             <li>Data et programmation</li>
@@ -890,152 +675,135 @@
             <li>Créativité et design</li>
           </ul>
 
-          <p class="about__quote">« J’apprends, j’expérimente, je crée et j’avance chaque jour vers mes objectifs. »</p>
+          <p class="quote">« J’apprends, j’expérimente, je crée et j’avance chaque jour vers mes objectifs. »</p>
         </div>
       </div>
     </section>
 
-    <!--===== SKILLS =====-->
-    <section class="skills section" id="skills">
-      <span class="section__subtitle">Savoir-faire</span>
-      <h2 class="section__title reveal">Compétences</h2>
-
-      <div class="skills__container bd-grid">
-        <p class="about__text">Je m’appuie sur SQL, MySQL, PostgreSQL, Python, HTML, CSS, JavaScript, React, Flutter et le langage C. La protection des systèmes et les notions de cryptographie font aussi partie de mon apprentissage. Je travaille en équipe, avec une communication claire, de la gestion de projet et du leadership.</p>
-        <ul class="skills__list">
-          <li class="skills__item">SQL</li>
-          <li class="skills__item">Python</li>
-          <li class="skills__item">HTML</li>
-          <li class="skills__item">JavaScript</li>
-          <li class="skills__item">React</li>
-          <li class="skills__item">Flutter</li>
-          <li class="skills__item">Langage C</li>
-          <li class="skills__item">CSS</li>
-          <li class="skills__item">MySQL</li>
-          <li class="skills__item">PostgreSQL</li>
-          <li class="skills__item">Protection des systèmes</li>
-          <li class="skills__item">Notions de cryptographie</li>
-          <li class="skills__item">Travail en équipe</li>
-          <li class="skills__item">Communication efficace</li>
-          <li class="skills__item">Gestion de projet</li>
-          <li class="skills__item">Leadership</li>
+    <section id="skills">
+      <div class="wrap">
+        <h2 class="title reveal">Compétences</h2>
+        <span class="subtitle">Savoir-faire</span>
+        <p class="intro">Je m’appuie sur SQL, MySQL, PostgreSQL, Python, HTML, CSS, JavaScript, React, Flutter et le langage C. La protection des systèmes et les notions de cryptographie font aussi partie de mon apprentissage. Je travaille en équipe, avec une communication claire, de la gestion de projet et du leadership.</p>
+        <ul class="skills-grid">
+          <li class="skill reveal">SQL</li>
+          <li class="skill reveal">Python</li>
+          <li class="skill reveal">HTML</li>
+          <li class="skill reveal">JavaScript</li>
+          <li class="skill reveal">React</li>
+          <li class="skill reveal">Flutter</li>
+          <li class="skill reveal">Langage C</li>
+          <li class="skill reveal">CSS</li>
+          <li class="skill reveal">MySQL</li>
+          <li class="skill reveal">PostgreSQL</li>
+          <li class="skill reveal">Protection des systèmes</li>
+          <li class="skill reveal">Notions de cryptographie</li>
+          <li class="skill reveal">Travail en équipe</li>
+          <li class="skill reveal">Communication efficace</li>
+          <li class="skill reveal">Gestion de projet</li>
+          <li class="skill reveal">Leadership</li>
         </ul>
       </div>
     </section>
 
-    <!--===== FORMATION RFI =====-->
-    <section class="rfi section" id="rfi">
-      <span class="section__subtitle">Club RFI Cotonou</span>
-      <h2 class="section__title reveal">Formation RFI</h2>
-
-      <div class="rfi__container bd-grid">
-        <p class="about__text">En avril 2023, j’ai suivi l’atelier d’art oratoire du Club RFI Cotonou, une initiation à la prise de parole en public. Les séances ont eu lieu les 11, 13 et 14 avril au Collège d’Enseignement Général Sainte Rita à Cotonou. Le thème était : « Comment apprendre à parler en public avec aisance ? ». La formation était animée par Moudachirou Abdoul Fataou, président de la fédération.</p>
-        <img class="rfi__image" src="atelier-rfi-cotonou-2023.jpg" alt="Attestation ATELIER D’ART ORATOIRE, Club RFI Cotonou, avril 2023, Divine AKOHA">
+    <section id="rfi">
+      <div class="wrap">
+        <div class="panel">
+          <h2 class="title reveal">Formation RFI</h2>
+          <span class="subtitle">Club RFI Cotonou</span>
+          <p>Formation RFI pour l’art oratoire.</p>
+          <p>En avril 2023, j’ai suivi l’atelier d’art oratoire du Club RFI Cotonou, une initiation à la prise de parole en public. Les séances ont eu lieu les 11, 13 et 14 avril au Collège d’Enseignement Général Sainte Rita à Cotonou. Le thème était : « Comment apprendre à parler en public avec aisance ? ». La formation était animée par Moudachirou Abdoul Fataou, président de la fédération.</p>
+          <img class="rfi-image" src="atelier-rfi-cotonou-2023.jpg" alt="Attestation ATELIER D’ART ORATOIRE, Club RFI Cotonou, avril 2023, Divine AKOHA">
+        </div>
       </div>
     </section>
 
-    <!--===== WORK / PROJETS =====-->
-    <section class="work section" id="work">
-      <span class="section__subtitle">Portfolio</span>
-      <h2 class="section__title reveal">Projets</h2>
+    <section class="projects" id="work">
+      <div class="wrap">
+        <h2 class="title reveal">Projets</h2>
+        <span class="subtitle">Portfolio</span>
+        <div class="bento">
+          <article class="card card-main reveal">
+            <h3>UNESCO Youth Hackathon 2026</h3>
+            <p>En juillet 2026, j’ai participé au programme de mentorat du UNESCO Youth Hackathon. Le concept travaillé est une extension de navigateur pour vérifier les réponses de l’IA. Le dépôt du projet est accessible sur GitHub.</p>
+            <a class="btn btn-white" href="https://github.com/Souraka229/unesco" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+          </article>
 
-      <div class="work__container bd-grid">
-        <article class="work__card reveal">
-          <h3 class="work__title">UNESCO Youth Hackathon 2026</h3>
-          <p class="work__description">En juillet 2026, j’ai participé au programme de mentorat du UNESCO Youth Hackathon. Le concept travaillé est une extension de navigateur pour vérifier les réponses de l’IA. Le dépôt du projet est accessible sur GitHub.</p>
-          <a class="work__link" href="https://github.com/Souraka229/unesco" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
-        </article>
+          <article class="card card-a reveal">
+            <img class="card-photo" src="first-global-face-certificate.jpg" alt="Divine AKOHA avec son certificat FIRST Global Challenge, Panama City 2025">
+            <h3>FIRST Global Challenge 2025</h3>
+            <p>En 2025, j’ai participé au FIRST Global Challenge à Panama City avec l’équipe du Bénin, via Femcoders. C’était une compétition internationale de robotique sur le thème de l’éco-équilibre. J’ai contribué à la conception d’un robot capable d’effectuer des actions de précision et de s’adapter en temps réel aux défis liés à l’équilibre environnemental.</p>
+          </article>
 
-        <article class="work__card reveal">
-          <img class="work__photo" src="first-global-face-certificate.jpg" alt="Divine AKOHA avec son certificat FIRST Global Challenge, Panama City 2025">
-          <h3 class="work__title">FIRST Global Challenge 2025</h3>
-          <p class="work__description">En 2025, j’ai participé au FIRST Global Challenge à Panama City avec l’équipe du Bénin, via Femcoders. C’était une compétition internationale de robotique sur le thème de l’éco-équilibre. J’ai contribué à la conception d’un robot capable d’effectuer des actions de précision et de s’adapter en temps réel aux défis liés à l’équilibre environnemental.</p>
-        </article>
+          <article class="card card-b reveal">
+            <img class="card-photo" src="oim-avrr-attestation-14052026.png" alt="Certificate of Participation décerné à AKOHA DIVINE pour le webinaire Artificial Intelligence in support of the AVRR Programme, OIM et BAIC, 14/05/2026">
+            <h3>Webinaire OIM × BAIC — IA au service du programme AVRR</h3>
+            <p>Attestation de participation au webinaire du 14 mai 2026, OIM et BAIC, sur l’intelligence artificielle au service du programme AVRR.</p>
+          </article>
 
-        <article class="work__card reveal">
-          <img class="work__doc" src="oim-avrr-attestation-14052026.png" alt="Certificate of Participation décerné à AKOHA DIVINE pour le webinaire Artificial Intelligence in support of the AVRR Programme, OIM et BAIC, 14/05/2026">
-          <h3 class="work__title">Webinaire OIM × BAIC — IA au service du programme AVRR</h3>
-          <p class="work__description">Attestation de participation au webinaire du 14 mai 2026, OIM et BAIC, sur l’intelligence artificielle au service du programme AVRR.</p>
-        </article>
-
-        <article class="work__card reveal">
-          <img class="work__doc" src="indabax-bois-badge.jpg" alt="Divine AKOHA en chemise IndabaX, badge IndabaX Benin visible">
-          <h3 class="work__title">Bénévole BAIC — Deep Learning IndabaX Bénin 2026</h3>
-          <p class="work__description">Je suis bénévole pour la Benin AI Community (BAIC) à l’occasion du Deep Learning IndabaX Bénin 2026. Un certificat de la BAIC atteste aussi de ma participation à la conférence Deep Learning Indaba Benin 2026, en qualité de participante. Ce document a été établi à Cotonou le 4 juillet 2026.</p>
-        </article>
+          <article class="card card-c reveal">
+            <img class="card-photo" src="indabax-bois-badge.jpg" alt="Divine AKOHA en chemise IndabaX, badge IndabaX Benin visible">
+            <h3>Bénévole BAIC — Deep Learning IndabaX Bénin 2026</h3>
+            <p>Je suis bénévole pour la Benin AI Community (BAIC) à l’occasion du Deep Learning IndabaX Bénin 2026. Un certificat de la BAIC atteste aussi de ma participation à la conférence Deep Learning Indaba Benin 2026, en qualité de participante. Ce document a été établi à Cotonou le 4 juillet 2026.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!--===== CONTACT =====-->
-    <section class="contact section" id="contact">
-      <span class="section__subtitle">Échangeons</span>
-      <h2 class="section__title reveal">Contact</h2>
-
-      <div class="contact__container bd-grid">
-        <p class="about__text">Pour échanger, vous pouvez m’écrire à divineakoha27@gmail.com. Mes projets sont sur GitHub, sous le nom divine-svg. Mon profil LinkedIn reprend le même parcours.</p>
-        <ul class="contact__list">
-          <li>
-            <a class="contact__card reveal" href="mailto:divineakoha27@gmail.com">
-              <span class="contact__card-label">E-mail</span>
-              divineakoha27@gmail.com
-            </a>
-          </li>
-          <li>
-            <a class="contact__card reveal" href="https://github.com/divine-svg" target="_blank" rel="noopener noreferrer">
-              <span class="contact__card-label">GitHub</span>
-              github.com/divine-svg
-            </a>
-          </li>
-          <li>
-            <a class="contact__card reveal" href="https://www.linkedin.com/in/divine-akoha-6a22a6382" target="_blank" rel="noopener noreferrer">
-              <span class="contact__card-label">LinkedIn</span>
-              linkedin.com/in/divine-akoha-6a22a6382
-            </a>
-          </li>
-        </ul>
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <h2 class="title reveal">Contact</h2>
+            <p>Pour échanger, vous pouvez m’écrire à divineakoha27@gmail.com. Mes projets sont sur GitHub, sous le nom divine-svg. Mon profil LinkedIn reprend le même parcours.</p>
+            <a class="mail" href="mailto:divineakoha27@gmail.com">divineakoha27@gmail.com</a>
+          </div>
+          <div class="links">
+            <a class="reveal" href="mailto:divineakoha27@gmail.com">E-mail <span>divineakoha27@gmail.com</span></a>
+            <a class="reveal" href="https://github.com/divine-svg" target="_blank" rel="noopener noreferrer">GitHub <span>github.com/divine-svg</span></a>
+            <a class="reveal" href="https://www.linkedin.com/in/divine-akoha-6a22a6382" target="_blank" rel="noopener noreferrer">LinkedIn <span>linkedin.com/in/divine-akoha-6a22a6382</span></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!--===== FOOTER =====-->
-  <footer class="footer">
-    <p class="footer__title">Divine</p>
-    <div class="footer__social">
-      <a href="https://github.com/divine-svg" class="footer__icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i></a>
-      <a href="https://www.linkedin.com/in/divine-akoha-6a22a6382" class="footer__icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a>
-      <a href="mailto:divineakoha27@gmail.com" class="footer__icon" aria-label="E-mail"><i class="bx bx-envelope"></i></a>
+  <footer>
+    <div class="wrap">
+      <p class="footer-name">Divine</p>
+      <div class="footer-social">
+        <a href="https://github.com/divine-svg" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/divine-akoha-6a22a6382" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a>
+        <a href="mailto:divineakoha27@gmail.com" aria-label="E-mail"><i class="bx bx-envelope"></i></a>
+      </div>
+      <p class="footer-copy">&#169; Divine AKOHA</p>
     </div>
-    <p class="footer__copy">&#169; Divine AKOHA</p>
   </footer>
 
   <script>
-    /*===== MENU SHOW =====*/
     const showMenu = (toggleId, navId) => {
       const toggle = document.getElementById(toggleId);
       const nav = document.getElementById(navId);
       if (toggle && nav) {
-        toggle.addEventListener("click", () => {
-          nav.classList.toggle("show");
-        });
+        toggle.addEventListener("click", () => nav.classList.toggle("show"));
       }
     };
     showMenu("nav-toggle", "nav-menu");
 
-    const navLink = document.querySelectorAll(".nav__link");
-    function linkAction() {
-      const navMenu = document.getElementById("nav-menu");
-      navMenu.classList.remove("show");
-    }
-    navLink.forEach((n) => n.addEventListener("click", linkAction));
+    document.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.remove("show");
+      });
+    });
 
     const sections = document.querySelectorAll("section[id]");
     function scrollActive() {
       const scrollY = window.pageYOffset;
       sections.forEach((current) => {
         const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50;
+        const sectionTop = current.offsetTop - 80;
         const sectionId = current.getAttribute("id");
-        const link = document.querySelector(".nav__menu a[href*=" + sectionId + "]");
+        const link = document.querySelector(".menu a[href*=" + sectionId + "]");
         if (!link) return;
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
           link.classList.add("active-link");
@@ -1048,7 +816,6 @@
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
     if (motionQuery.matches && "IntersectionObserver" in window) {
-      const revealEls = document.querySelectorAll(".reveal");
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -1056,7 +823,7 @@
           revealObserver.unobserve(entry.target);
         });
       }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
-      revealEls.forEach((el) => revealObserver.observe(el));
+      document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
     }
   </script>
 </body>
